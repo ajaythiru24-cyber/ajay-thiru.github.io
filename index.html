@@ -3,232 +3,400 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ajay Thiru | Academic & Research Portfolio</title>
+  <title>Ajay Thiru | Robotics & Automation Academic Portfolio</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome for Icons -->
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <!-- Google Fonts -->
+  <!-- Google Font: Space Grotesk + Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          },
+          colors: {
+            cyber: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              900: '#0f172a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    /* Subtle dot grid pattern */
+    .bg-grid-pattern {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    /* Gradient glass card */
+    .glass-card {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card:hover {
+      border-color: rgba(99, 102, 241, 0.45);
+    }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
+<body class="bg-[#090d16] text-slate-300 antialiased selection:bg-indigo-500 selection:text-white font-sans overflow-x-hidden">
 
-  <!-- Navigation -->
-  <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-slate-200">
-    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="#" class="font-bold text-lg tracking-tight text-slate-900">Ajay Thiru</a>
-      <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-600">
-        <a href="#about" class="hover:text-indigo-600 transition">About</a>
-        <a href="#experience" class="hover:text-indigo-600 transition">Experience</a>
-        <a href="#publications" class="hover:text-indigo-600 transition">Publications</a>
-        <a href="#education" class="hover:text-indigo-600 transition">Education</a>
-        <a href="#contact" class="hover:text-indigo-600 transition">Contact</a>
+  <!-- Ambient background glow elements -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-indigo-600/20 rounded-full blur-[140px]"></div>
+    <div class="absolute top-1/3 -right-40 w-96 h-96 bg-cyan-600/15 rounded-full blur-[140px]"></div>
+    <div class="absolute bottom-10 left-1/3 w-[32rem] h-[32rem] bg-violet-600/15 rounded-full blur-[160px]"></div>
+    <div class="absolute inset-0 bg-grid-pattern opacity-60"></div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#090d16]/75 border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5 font-display font-bold text-xl text-white tracking-wider">
+        <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-400 text-white shadow-lg shadow-indigo-500/25">
+          <i class="fa-solid fa-microchip text-sm"></i>
+        </span>
+        AJAY THIRU
+      </a>
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-400">
+        <a href="#about" class="hover:text-cyan-400 transition">Overview</a>
+        <a href="#experience" class="hover:text-cyan-400 transition">Experience</a>
+        <a href="#publications" class="hover:text-cyan-400 transition">Publications</a>
+        <a href="#education" class="hover:text-cyan-400 transition">Credentials</a>
       </nav>
-      <a href="mailto:ajay.dhuvya123@gmail.com" class="text-xs sm:text-sm font-medium px-4 py-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition shadow-sm">
-        Get in Touch
+      <a href="mailto:ajay.dhuvya123@gmail.com" class="relative group p-px rounded-xl overflow-hidden shadow-lg shadow-indigo-600/20 inline-block">
+        <span class="absolute inset-0 bg-gradient-to-r from-cyan-400 via-indigo-500 to-fuchsia-500 transition-all duration-300 group-hover:opacity-100"></span>
+        <span class="relative block px-5 py-2 text-xs font-semibold rounded-[11px] bg-slate-950 text-white group-hover:bg-transparent transition">
+          Contact Academic
+        </span>
       </a>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-6 py-12 space-y-20">
+  <main class="relative z-10 max-w-6xl mx-auto px-6 py-12 space-y-24">
 
-    <!-- Hero / About Section -->
-    <section id="about" class="pt-4">
-      <div class="space-y-4">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold uppercase tracking-wider">
-          <i class="fa-solid fa-graduation-cap"></i> Robotics & Automation Academic
-        </div>
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-          Ajay Thiru
-        </h1>
-        <p class="text-lg sm:text-xl text-slate-600 font-normal leading-relaxed max-w-3xl">
-          Assistant Professor in the Department of Robotics & Automation at <span class="font-semibold text-slate-800">Easwari Engineering College</span> and Research Scholar at <span class="font-semibold text-slate-800">SRMIST</span>. SIH-2024 Finalist and Finalist Team Mentor.
-        </p>
-
-        <!-- Social Badges & Links -->
-        <div class="flex flex-wrap gap-3 pt-3">
-          <a href="https://orcid.org/0000-0001-8943-1859" target="_blank" class="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-medium rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition">
-            <i class="fa-brands fa-orcid text-emerald-600"></i> ORCID: 0000-0001-8943-1859
-          </a>
-          <a href="https://www.linkedin.com/in/ajay-thiru-b6b877241/" target="_blank" class="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-medium rounded-lg bg-sky-50 text-sky-800 border border-sky-200 hover:bg-sky-100 transition">
-            <i class="fa-brands fa-linkedin text-sky-600"></i> LinkedIn Profile
-          </a>
-          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs text-slate-500">
-            <i class="fa-solid fa-location-dot"></i> Chennai, Tamil Nadu, India
-          </span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="space-y-6">
-      <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-200 pb-3">Professional Experience</h2>
-      <div class="space-y-6">
+    <!-- Hero / Profile Visual Section -->
+    <section id="about" class="pt-6">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
         
-        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-slate-300 transition">
-          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-            <h3 class="text-lg font-semibold text-slate-900">Assistant Professor</h3>
-            <span class="text-xs font-medium text-slate-500 uppercase tracking-wide">June 2024 — Present</span>
+        <!-- Bio and Intro -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-950/40 text-cyan-300 text-xs font-medium tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            Robotics • Mechatronics • Optimization
           </div>
-          <p class="text-sm font-medium text-indigo-600">Easwari Engineering College (SRM Group)</p>
-          <p class="text-xs text-slate-500 mt-0.5">Department of Robotics and Automation • Chennai, India</p>
-          <div class="mt-4">
-            <a href="https://srmeaswari.ac.in/wp-content/uploads/2024/08/Mr.T.Ajay.pdf" target="_blank" class="text-xs font-medium text-slate-600 hover:text-indigo-600 inline-flex items-center gap-1">
-              <i class="fa-solid fa-file-pdf"></i> View Faculty Profile PDF <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+
+          <h1 class="text-4xl sm:text-6xl font-display font-extrabold text-white tracking-tight leading-[1.1]">
+            Engineering Intelligent <span class="bg-gradient-to-r from-cyan-400 via-indigo-400 to-fuchsia-400 bg-clip-text text-transparent">Robotic Systems</span> & Automation.
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-400 leading-relaxed max-w-xl">
+            Assistant Professor at <span class="text-white font-medium">Easwari Engineering College</span> and PhD Research Scholar at <span class="text-white font-medium">SRMIST</span>. Exploring powder-metallurgy optimization, IoT-driven robotics, and automated systems.
+          </p>
+
+          <!-- Action Buttons & Badges -->
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="https://orcid.org/0000-0001-8943-1859" target="_blank" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-emerald-500/40 text-emerald-300 hover:bg-emerald-950/40 transition text-xs font-semibold shadow-sm">
+              <i class="fa-brands fa-orcid text-emerald-400 text-sm"></i> ORCID Verified[cite: 2]
             </a>
+            <a href="https://www.linkedin.com/in/ajay-thiru-b6b877241/" target="_blank" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-blue-500/40 text-blue-300 hover:bg-blue-950/40 transition text-xs font-semibold shadow-sm">
+              <i class="fa-brands fa-linkedin text-blue-400 text-sm"></i> LinkedIn Profile[cite: 1]
+            </a>
+            <span class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/60 border border-slate-800 text-slate-400 text-xs">
+              <i class="fa-solid fa-location-dot text-slate-500"></i> Chennai, Tamil Nadu[cite: 1]
+            </span>
           </div>
         </div>
 
-        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-slate-300 transition">
-          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-            <h3 class="text-lg font-semibold text-slate-900">Research Scholar</h3>
-            <span class="text-xs font-medium text-slate-500 uppercase tracking-wide">August 2020 — Present</span>
-          </div>
-          <p class="text-sm font-medium text-indigo-600">SRM Institute of Science and Technology (SRMIST)</p>
-          <p class="text-xs text-slate-500 mt-0.5">Department of Mechatronics Engineering • Kattankulathur, Chennai, India</p>
-        </div>
+        <!-- Visual Metrics Card / Infographic Block -->
+        <div class="lg:col-span-5">
+          <div class="relative glass-card rounded-3xl p-6 sm:p-8 overflow-hidden shadow-2xl">
+            <div class="absolute -top-16 -right-16 w-40 h-40 bg-indigo-500/20 rounded-full blur-3xl"></div>
+            
+            <div class="flex items-center justify-between border-b border-white/5 pb-5">
+              <div>
+                <p class="text-xs uppercase font-mono tracking-wider text-slate-400">Research Focus</p>
+                <h3 class="text-lg font-display font-semibold text-white">Smart Automation</h3>
+              </div>
+              <span class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+                <i class="fa-solid fa-chart-line"></i>
+              </span>
+            </div>
 
-      </div>
-    </section>
+            <!-- Quantitative Highlights Grid -->
+            <div class="grid grid-cols-2 gap-4 py-6">
+              <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
+                <span class="block text-3xl font-display font-bold text-white">4</span>
+                <span class="text-xs text-slate-400 mt-1 block">Refereed Publications[cite: 2]</span>
+              </div>
+              <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
+                <span class="block text-3xl font-display font-bold text-cyan-400">SIH '24</span>
+                <span class="text-xs text-slate-400 mt-1 block">National Finalist Mentor[cite: 1]</span>
+              </div>
+              <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
+                <span class="block text-3xl font-display font-bold text-indigo-400">6+ Yrs</span>
+                <span class="text-xs text-slate-400 mt-1 block">Research & Academia[cite: 1]</span>
+              </div>
+              <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
+                <span class="block text-3xl font-display font-bold text-fuchsia-400">M.Tech</span>
+                <span class="text-xs text-slate-400 mt-1 block">Robotics Specialized[cite: 1]</span>
+              </div>
+            </div>
 
-    <!-- Publications Section -->
-    <section id="publications" class="space-y-6">
-      <div class="flex items-center justify-between border-b border-slate-200 pb-3">
-        <h2 class="text-2xl font-bold text-slate-900">Publications</h2>
-        <span class="text-xs font-medium px-2.5 py-1 rounded bg-slate-100 text-slate-600">4 Peer-Reviewed Works</span>
-      </div>
-
-      <div class="space-y-4">
-
-        <!-- Publication 1 -->
-        <article class="p-5 rounded-xl bg-white border border-slate-200 hover:border-indigo-200 hover:shadow-xs transition space-y-2">
-          <span class="text-xs font-bold text-indigo-600 tracking-wider uppercase">Journal of Field Robotics (2026)</span>
-          <h3 class="font-semibold text-slate-900 leading-snug">
-            Leveraging IoT-Aided Robotics for Enhanced Efficiency in Urban Traffic Management Utilizing Multi-Component Attention Graph Convolutional Neural Network Intended for Real-Time Traffic Monitoring Systems
-          </h3>
-          <p class="text-xs text-slate-500">Published: August 24, 2026</p>
-          <div class="pt-1">
-            <a href="https://doi.org/10.1002/rob.70327" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-indigo-600 transition">
-              <i class="fa-solid fa-link"></i> DOI: 10.1002/rob.70327 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-            </a>
-          </div>
-        </article>
-
-        <!-- Publication 2 -->
-        <article class="p-5 rounded-xl bg-white border border-slate-200 hover:border-indigo-200 hover:shadow-xs transition space-y-2">
-          <span class="text-xs font-bold text-indigo-600 tracking-wider uppercase">Interactions (2026)</span>
-          <h3 class="font-semibold text-slate-900 leading-snug">
-            Multi-response optimization of powder-metallurgy-processed ZE43/TiB2/La2O3 hybrid composites for enhanced hardness and wear resistance
-          </h3>
-          <p class="text-xs text-slate-500">Published: September 24, 2026</p>
-          <div class="pt-1">
-            <a href="https://doi.org/10.1007/s10751-026-02795-1" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-indigo-600 transition">
-              <i class="fa-solid fa-link"></i> DOI: 10.1007/s10751-026-02795-1 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-            </a>
-          </div>
-        </article>
-
-        <!-- Publication 3 -->
-        <article class="p-5 rounded-xl bg-white border border-slate-200 hover:border-indigo-200 hover:shadow-xs transition space-y-2">
-          <span class="text-xs font-bold text-indigo-600 tracking-wider uppercase">Interactions (2026)</span>
-          <h3 class="font-semibold text-slate-900 leading-snug">
-            AI-based prediction and optimization of grain storage conditions for quality loss minimization
-          </h3>
-          <p class="text-xs text-slate-500">Published: September 15, 2026</p>
-          <div class="pt-1">
-            <a href="https://doi.org/10.1007/s10751-026-02774-6" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-indigo-600 transition">
-              <i class="fa-solid fa-link"></i> DOI: 10.1007/s10751-026-02774-6 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-            </a>
-          </div>
-        </article>
-
-        <!-- Publication 4 -->
-        <article class="p-5 rounded-xl bg-white border border-slate-200 hover:border-indigo-200 hover:shadow-xs transition space-y-2">
-          <span class="text-xs font-bold text-indigo-600 tracking-wider uppercase">IOP Conference Series: Materials Science and Engineering (2020)</span>
-          <h3 class="font-semibold text-slate-900 leading-snug">
-            Design optimization and development of an Automated Storage and Retrieval System
-          </h3>
-          <p class="text-xs text-slate-500">Published: August 1, 2020</p>
-          <div class="pt-1">
-            <a href="https://doi.org/10.1088/1757-899x/912/3/032031" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-indigo-600 transition">
-              <i class="fa-solid fa-link"></i> DOI: 10.1088/1757-899x/912/3/032031 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-            </a>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- Education & Skills Grid -->
-    <section id="education" class="grid md:grid-cols-2 gap-8">
-      
-      <!-- Education -->
-      <div class="space-y-4">
-        <h2 class="text-xl font-bold text-slate-900 border-b border-slate-200 pb-2">Education</h2>
-        <div class="space-y-4">
-          <div class="p-4 rounded-xl bg-white border border-slate-200">
-            <h3 class="font-semibold text-slate-900 text-sm">M.Tech in Robotics Technology</h3>
-            <p class="text-xs text-indigo-600 font-medium">SRMIST, Kattankulathur</p>
-            <p class="text-xs text-slate-500">August 2018 — August 2020</p>
-          </div>
-          <div class="p-4 rounded-xl bg-white border border-slate-200">
-            <h3 class="font-semibold text-slate-900 text-sm">B.Tech in Mechatronics, Robotics & Automation</h3>
-            <p class="text-xs text-indigo-600 font-medium">SRMIST, Kattankulathur</p>
-            <p class="text-xs text-slate-500">August 2014 — August 2018</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Skills & Achievements -->
-      <div class="space-y-4">
-        <h2 class="text-xl font-bold text-slate-900 border-b border-slate-200 pb-2">Focus Areas & Highlights</h2>
-        <div class="p-5 rounded-xl bg-white border border-slate-200 space-y-4">
-          <div>
-            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-2">Key Competencies</span>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-700">Robotics & Automation</span>
-              <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-700">Academic Research</span>
-              <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-700">IoT & Smart Systems</span>
-              <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-700">ASRS Optimization</span>
-              <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-700">Neural Networks</span>
+            <div class="rounded-xl bg-gradient-to-r from-indigo-500/10 to-cyan-500/10 border border-indigo-500/20 p-3.5 flex items-center gap-3">
+              <i class="fa-solid fa-award text-amber-400 text-lg"></i>
+              <p class="text-xs text-slate-300">
+                <strong class="text-white font-medium">Smart India Hackathon 2024:</strong> Finalist & Mentor of Finalist Team[cite: 1].
+              </p>
             </div>
           </div>
-          <div class="pt-2 border-t border-slate-100">
-            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1">Accolades</span>
-            <p class="text-xs text-slate-700 leading-relaxed">
-              <strong class="font-medium text-slate-900">Smart India Hackathon (SIH 2024):</strong> Finalist & Mentor of the Finalist Team.
-            </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Experience Timeline (Cyber/Glass Graphic) -->
+    <section id="experience" class="space-y-8">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-widest text-indigo-400">Career Trajectory</span>
+        <h2 class="text-3xl font-display font-bold text-white mt-1">Professional Experience</h2>
+      </div>
+
+      <div class="relative pl-6 sm:pl-8 border-l border-white/10 space-y-10">
+        
+        <!-- Role 1 -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-950 border-2 border-indigo-500 group-hover:border-cyan-400 group-hover:scale-125 transition"></div>
+          <div class="glass-card p-6 rounded-2xl transition duration-300">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                June 2024 — Present[cite: 1]
+              </span>
+              <span class="text-xs text-slate-400">Chennai, Tamil Nadu, IN[cite: 1, 2]</span>
+            </div>
+            <h3 class="text-xl font-display font-bold text-white mt-3">Assistant Professor</h3>
+            <p class="text-sm font-medium text-cyan-400">Easwari Engineering College (SRM Group) • Dept. of Robotics and Automation[cite: 1, 2]</p>
+            <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+              <span class="text-xs text-slate-400">Faculty ID & Profile</span>
+              <a href="https://srmeaswari.ac.in/wp-content/uploads/2024/08/Mr.T.Ajay.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-white hover:text-cyan-400 transition">
+                <i class="fa-solid fa-file-pdf text-red-400"></i> Official Profile PDF <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>[cite: 2]
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Role 2 -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-950 border-2 border-slate-600 group-hover:border-indigo-400 group-hover:scale-125 transition"></div>
+          <div class="glass-card p-6 rounded-2xl transition duration-300">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-slate-800 text-slate-300 border border-slate-700">
+                August 2020 — Present[cite: 1]
+              </span>
+              <span class="text-xs text-slate-400">Kattankulathur, Chennai[cite: 1]</span>
+            </div>
+            <h3 class="text-xl font-display font-bold text-white mt-3">Research Scholar</h3>
+            <p class="text-sm font-medium text-indigo-400">SRM Institute of Science and Technology (SRMIST) • Mechatronics Engineering[cite: 1, 2]</p>
+            <p class="text-xs text-slate-400 mt-2">Active doctoral research in advanced materials, automation algorithms, and IoT-driven robotic systems[cite: 2, 3].</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Research Publications Showcase -->
+    <section id="publications" class="space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-cyan-400">Peer-Reviewed Literature</span>
+          <h2 class="text-3xl font-display font-bold text-white mt-1">Research Works</h2>
+        </div>
+        <a href="https://orcid.org/0000-0001-8943-1859" target="_blank" class="text-xs font-medium text-slate-400 hover:text-cyan-400 inline-flex items-center gap-1.5 transition">
+          View all records on ORCID <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>[cite: 2]
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        
+        <!-- Paper 1 -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition hover:-translate-y-1 duration-300 group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                Journal of Field Robotics[cite: 3]
+              </span>
+              <span class="text-[11px] font-mono text-slate-500">2026-08-24[cite: 3]</span>
+            </div>
+            <h3 class="text-base font-display font-semibold text-white group-hover:text-cyan-300 transition leading-snug">
+              Leveraging IoT-Aided Robotics for Enhanced Efficiency in Urban Traffic Management Utilizing Multi-Component Attention Graph Convolutional Neural Network Intended for Real-Time Traffic Monitoring Systems[cite: 3]
+            </h3>
+          </div>
+          <div class="pt-5 mt-5 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-400">DOI: 10.1002/rob.70327[cite: 3]</span>
+            <a href="https://doi.org/10.1002/rob.70327" target="_blank" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-slate-300 hover:bg-cyan-500 hover:text-slate-950 transition">
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Paper 2 -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition hover:-translate-y-1 duration-300 group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                Interactions[cite: 2]
+              </span>
+              <span class="text-[11px] font-mono text-slate-500">2026-09-24[cite: 2]</span>
+            </div>
+            <h3 class="text-base font-display font-semibold text-white group-hover:text-cyan-300 transition leading-snug">
+              Multi-response optimization of powder-metallurgy-processed ZE43/TiB2/La2O3 hybrid composites for enhanced hardness and wear resistance[cite: 2]
+            </h3>
+          </div>
+          <div class="pt-5 mt-5 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-400">DOI: 10.1007/s10751-026-02795-1[cite: 2]</span>
+            <a href="https://doi.org/10.1007/s10751-026-02795-1" target="_blank" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-slate-300 hover:bg-cyan-500 hover:text-slate-950 transition">
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Paper 3 -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition hover:-translate-y-1 duration-300 group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                Interactions[cite: 2]
+              </span>
+              <span class="text-[11px] font-mono text-slate-500">2026-09-15[cite: 2]</span>
+            </div>
+            <h3 class="text-base font-display font-semibold text-white group-hover:text-cyan-300 transition leading-snug">
+              AI-based prediction and optimization of grain storage conditions for quality loss minimization[cite: 2]
+            </h3>
+          </div>
+          <div class="pt-5 mt-5 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-400">DOI: 10.1007/s10751-026-02774-6[cite: 3]</span>
+            <a href="https://doi.org/10.1007/s10751-026-02774-6" target="_blank" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-slate-300 hover:bg-cyan-500 hover:text-slate-950 transition">
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Paper 4 -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition hover:-translate-y-1 duration-300 group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider bg-fuchsia-500/20 text-fuchsia-300 border border-fuchsia-500/30">
+                IOP MSE Series[cite: 3]
+              </span>
+              <span class="text-[11px] font-mono text-slate-500">2020-08-01[cite: 3]</span>
+            </div>
+            <h3 class="text-base font-display font-semibold text-white group-hover:text-cyan-300 transition leading-snug">
+              Design optimization and development of an Automated Storage and Retrieval System[cite: 3]
+            </h3>
+          </div>
+          <div class="pt-5 mt-5 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-400">DOI: 10.1088/1757-899x/912/3/032031[cite: 3]</span>
+            <a href="https://doi.org/10.1088/1757-899x/912/3/032031" target="_blank" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-slate-300 hover:bg-cyan-500 hover:text-slate-950 transition">
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Academic Background & Technical Competencies -->
+    <section id="education" class="grid lg:grid-cols-2 gap-8">
+      
+      <!-- Education Track -->
+      <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6">
+        <h3 class="text-xl font-display font-bold text-white flex items-center gap-2.5">
+          <i class="fa-solid fa-user-graduate text-indigo-400"></i> Education History
+        </h3>
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl bg-white/[0.02] border border-white/5">
+            <span class="text-[11px] font-mono text-indigo-400 block mb-1">2018 — 2020[cite: 1]</span>
+            <h4 class="font-display font-semibold text-white text-base">M.Tech in Robotics Technology[cite: 1]</h4>
+            <p class="text-xs text-slate-400">SRM Institute of Science and Technology, Kattankulathur[cite: 1]</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white/[0.02] border border-white/5">
+            <span class="text-[11px] font-mono text-indigo-400 block mb-1">2014 — 2018[cite: 1]</span>
+            <h4 class="font-display font-semibold text-white text-base">B.Tech in Mechatronics, Robotics & Automation[cite: 1]</h4>
+            <p class="text-xs text-slate-400">SRM Institute of Science and Technology, Kattankulathur[cite: 1]</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Visual Array -->
+      <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6">
+        <h3 class="text-xl font-display font-bold text-white flex items-center gap-2.5">
+          <i class="fa-solid fa-cubes text-cyan-400"></i> Core Competencies
+        </h3>
+        
+        <div class="space-y-3">
+          <span class="text-xs font-mono uppercase text-slate-400 block">Domains & Methodologies</span>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-xs text-indigo-300">Robotics & Automation[cite: 1]</span>
+            <span class="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-xs text-cyan-300">Academic Research[cite: 1]</span>
+            <span class="px-3 py-1.5 rounded-lg bg-fuchsia-500/10 border border-fuchsia-500/20 text-xs text-fuchsia-300">Automated Storage & Retrieval (ASRS)[cite: 1, 3]</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-white/5 text-xs text-slate-300">Attention GCNNs[cite: 3]</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-white/5 text-xs text-slate-300">Powder Metallurgy[cite: 2]</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-white/5 text-xs text-slate-300">Real-Time Traffic IoT[cite: 3]</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-white/5 text-xs text-slate-300">Multi-Response Optimization[cite: 2]</span>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-white/5">
+          <span class="text-xs font-mono uppercase text-slate-400 block mb-2">Professional Strengths</span>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-md bg-white/[0.04] text-xs text-slate-300">Academic Mentorship[cite: 1]</span>
+            <span class="px-3 py-1 rounded-md bg-white/[0.04] text-xs text-slate-300">Communication[cite: 1]</span>
+            <span class="px-3 py-1 rounded-md bg-white/[0.04] text-xs text-slate-300">Technical Documentation</span>
           </div>
         </div>
       </div>
 
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="rounded-2xl bg-indigo-900 text-white p-8 sm:p-10 text-center space-y-4">
-      <h2 class="text-2xl sm:text-3xl font-bold">Connect for Research & Collaboration</h2>
-      <p class="text-indigo-200 text-sm max-w-xl mx-auto">
-        Feel free to reach out for academic inquiries, research collaborations, or student mentorship.
-      </p>
-      <div class="pt-2 flex flex-wrap justify-center gap-4">
-        <a href="mailto:ajay.dhuvya123@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white text-indigo-900 font-semibold text-sm hover:bg-indigo-50 transition shadow">
-          <i class="fa-solid fa-envelope"></i> ajay.dhuvya123@gmail.com
+    <!-- Interactive Graphic Callout / Contact Banner -->
+    <section class="relative rounded-3xl p-8 sm:p-12 overflow-hidden border border-indigo-500/30 bg-gradient-to-br from-indigo-950/80 via-slate-900 to-slate-950 text-center space-y-6 shadow-2xl">
+      <div class="absolute inset-0 bg-grid-pattern opacity-40"></div>
+      <div class="relative z-10 max-w-xl mx-auto space-y-3">
+        <h2 class="text-3xl font-display font-extrabold text-white">Let's Collaborate</h2>
+        <p class="text-sm text-slate-400">
+          Open to research inquiries, academic exchanges, conference talks, and robotics innovation projects.
+        </p>
+      </div>
+
+      <div class="relative z-10 flex flex-wrap justify-center gap-4 pt-2">
+        <a href="mailto:ajay.dhuvya123@gmail.com" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-white text-slate-950 font-semibold text-xs hover:bg-slate-200 transition shadow-lg shadow-white/10">
+          <i class="fa-solid fa-envelope"></i> ajay.dhuvya123@gmail.com[cite: 1]
         </a>
-        <a href="https://www.linkedin.com/in/ajay-thiru-b6b877241/" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-indigo-800 text-white border border-indigo-700 font-semibold text-sm hover:bg-indigo-700 transition">
-          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        <a href="https://www.linkedin.com/in/ajay-thiru-b6b877241/" target="_blank" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white font-semibold text-xs hover:bg-slate-800 transition">
+          <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn[cite: 1]
         </a>
       </div>
     </section>
 
   </main>
 
-  <footer class="border-t border-slate-200 py-6 text-center text-xs text-slate-500">
-    <p>© 2026 Ajay Thiru. Academic Portfolio.</p>
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-white/5 py-8 text-center text-xs text-slate-500 font-mono">
+    <p>© 2026 Ajay Thiru • Built with Tailwind CSS & Hosted on GitHub Pages</p>
   </footer>
 
 </body>
